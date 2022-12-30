@@ -73,8 +73,17 @@ public class EventQueue : MonoBehaviour
                 default:
                     break;
             }
+<<<<<<< Updated upstream
         }
         eventList[0].game.UpdateWindow();
+=======
+        });
+
+        flag = false;
+
+        //eventList[0].game.UpdateWindow();
+        Destroy(gameObject);
+>>>>>>> Stashed changes
     }
 
 
@@ -287,13 +296,25 @@ public class EventQueue : MonoBehaviour
         endLocation += count;
     }
 
-    void Attack(Player me, Player you, int auraDamage, int lifeDamage)
+    void Attack(Player attacker, Player defender, int auraDamage, int lifeDamage)
     {
-        //TODO : 공격 구현
-        
+        //공격 효과 적용 순서
+        //1.공격조건 확인
+        //2.공격발생
+        //3.피격 플레이어의 대응 확인
+        //  └대응시 - 1)대응시 효과 적용
+        //        2)공격조건 재확인
+        //4.공격 적용
+        //5.피격 플레이어 데미지 타입 선택(오라, 체력)
+        //6.데미지 적용
+        //7.승패 확인
+        //  └체력0일시 - 게임종료
+        //  └체력이남아있을때 - 진행
+
+
     }
 
-    void GetDamage(Player me, int auraDamage, int lifeDamage)
+    void GetDamage(Player defender, int auraDamage, int lifeDamage)
     {
 
     }
